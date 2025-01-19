@@ -12,7 +12,10 @@ import { GetListsComponent } from '../components/getListsComponent'
 import { queryClient } from '../lib/react-query'
 
 const listInputSchema = z.object({
-  list: z.string({ message: 'Must be a valide value' }).nonempty({ message: 'Field is empty' }).transform((val) => val.trim()).refine((val) => val.length > 0)
+  list: z.string({ message: 'Must be a valide value' })
+    .nonempty({ message: 'Field is empty' })
+    .transform((val) => val.trim())
+    .refine((val) => val.length > 0, { message: 'Field cannot be empty' })
 })
 
 type ListInput = z.infer<typeof listInputSchema>
@@ -41,6 +44,11 @@ export function TodoManager () {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['getLists'] })
       refetch()
+    },
+    onError: (error, variables) => {
+      window.alert(`An error occurred while creating the list: the item '${variables.list}' already exists`)
+      reset()
+      throw new Error(error.message)
     },
   })
 
@@ -88,7 +96,7 @@ export function TodoManager () {
     <div className='flex min-h-screen items-center justify-center bg-gray-900'>
       <div className='mx-4 my-6 w-full max-w-2xl space-y-8 rounded-2xl bg-gray-800 p-12 shadow-2xl'>
         <h1 className='text-center text-5xl font-extrabold text-gray-100 drop-shadow-lg'>
-          Todo Manager
+          ToDo Manager
         </h1>
         <div>
           <form className='flex items-center space-x-2' onSubmit={handleSubmit(handleCreateList)}>
