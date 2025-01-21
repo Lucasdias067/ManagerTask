@@ -30,7 +30,10 @@ export function TodoManager () {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const page = searchParams.get('page') || '1'
-  const pages = z.coerce.number().transform(val => val - 1).parse(page)
+  const pages = z.coerce.number()
+    .transform(val => val - 1)
+    .refine(val => val >= 0, { message: 'Page cannot be less than 1' })
+    .parse(page)
 
   const { data: getListsFn, refetch, } = useQuery({
     queryKey: ['getLists'],
