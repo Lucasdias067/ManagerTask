@@ -1,4 +1,4 @@
-import { createBrowserRouter, useSearchParams } from 'react-router'
+import { createBrowserRouter } from 'react-router'
 
 import { TodoManager } from './pages/todo-manager'
 
