@@ -38,4 +38,3 @@ Run database migrations:
 Start the server:
 
     npm run dev
-The API will be accessible at http://localhost:3000.
