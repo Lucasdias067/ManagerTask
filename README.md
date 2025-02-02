@@ -1,40 +1,48 @@
-# Manager Task API
+# Manager Task Web
 
-A RESTful API for managing tasks, built with Node.js, Express, and Prisma.
+A web-based task management application built with React, Vite, and Tailwind CSS.
 
 ## Features
 
-- **Task Management**: Create, read, update, and delete tasks.
-- **Database Integration**: Utilizes Prisma for database operations.
+- **Task Management**: Create, view, update, and delete tasks.
+- **Responsive Design**: Optimized for various screen sizes.
+- **Modern UI**: Styled with Tailwind CSS for a sleek and intuitive interface.
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) v14 or higher
-- [Docker](https://www.docker.com/) (for containerized database setup)
+- [npm](https://www.npmjs.com/)
 
 ## Installation
 
-Clone the repository:
+1. **Clone the repository**:
 
-    git clone https://github.com/Lucasdias067/manager-task-api.git
-    cd manager-task-api
+   ```bash
+   git clone https://github.com/Lucasdias067/manager-task-web.git
+   cd manager-task-web
 
-Install dependencies:
-
+2. **Install dependencies**:
+   
+    ```bash
     npm install
 
-Set up the database:
-  
-  If using Docker, start the database container:
-    
-    docker-compose up -d
+3. **Start the development server**:
 
-  If not using Docker, ensure you have a PostgreSQL database running and update the DATABASE_URL in the .env file accordingly.
-
-Run database migrations:
-
-    npx prisma migrate dev
-
-Start the server:
-
+    ```bash
     npm run dev
+
+The application will be accessible at http://localhost:5173.
+
+Project Structure:
+    src/: Contains the source code of the application.
+    public/: Static assets.
+    package.json: Project metadata and dependencies.
+
+Available Scripts:
+    npm run dev: Starts the development server.
+    npm run build: Builds the application for production.
+    npm run preview: Previews the production build locally.
+
+Deployment
+The application can be deployed to platforms like Vercel, Netlify, or any static site hosting service. Ensure that the build command is set to npm run build and the output directory is dist.
+
