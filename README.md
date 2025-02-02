@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+# Manager Task API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A RESTful API for managing tasks, built with Node.js, Express, and Prisma.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Task Management**: Create, read, update, and delete tasks.
+- **User Authentication**: Secure user registration and login.
+- **Database Integration**: Utilizes Prisma for database operations.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Node.js](https://nodejs.org/) v14 or higher
+- [Docker](https://www.docker.com/) (for containerized database setup)
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Clone the repository**:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```bash
+   git clone https://github.com/Lucasdias067/manager-task-api.git
+   cd manager-task-api
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Install dependencies:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+    npm install
+
+Set up the database:
+  
+  If using Docker, start the database container:
+    
+    docker-compose up -d
+
+  If not using Docker, ensure you have a PostgreSQL database running and update the DATABASE_URL in the .env file accordingly.
+
+Run database migrations:
+
+    npx prisma migrate dev
+
+Start the server:
+
+    npm run dev
+The API will be accessible at http://localhost:3000.
