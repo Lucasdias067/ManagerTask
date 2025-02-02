@@ -32,17 +32,3 @@ A web-based task management application built with React, Vite, and Tailwind CSS
     npm run dev
 
 The application will be accessible at http://localhost:5173.
-
-Project Structure:
-    src/: Contains the source code of the application.
-    public/: Static assets.
-    package.json: Project metadata and dependencies.
-
-Available Scripts:
-    npm run dev: Starts the development server. /b
-    npm run build: Builds the application for production.
-    npm run preview: Previews the production build locally.
-
-Deployment
-The application can be deployed to platforms like Vercel, Netlify, or any static site hosting service. Ensure that the build command is set to npm run build and the output directory is dist.
-
