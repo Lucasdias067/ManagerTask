@@ -17,8 +17,8 @@ A RESTful API for managing tasks, built with Node.js, Express, and Prisma.
 
 Clone the repository:
 
-      git clone https://github.com/Lucasdias067/manager-task-api.git
-      cd manager-task-api
+    git clone https://github.com/Lucasdias067/manager-task-api.git
+    cd manager-task-api
 
 Install dependencies:
 
