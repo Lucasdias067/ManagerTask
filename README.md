@@ -5,7 +5,6 @@ A RESTful API for managing tasks, built with Node.js, Express, and Prisma.
 ## Features
 
 - **Task Management**: Create, read, update, and delete tasks.
-- **User Authentication**: Secure user registration and login.
 - **Database Integration**: Utilizes Prisma for database operations.
 
 ## Prerequisites
