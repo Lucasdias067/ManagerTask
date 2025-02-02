@@ -39,7 +39,7 @@ Project Structure:
     package.json: Project metadata and dependencies.
 
 Available Scripts:
-    npm run dev: Starts the development server.
+    npm run dev: Starts the development server. /b
     npm run build: Builds the application for production.
     npm run preview: Previews the production build locally.
 
